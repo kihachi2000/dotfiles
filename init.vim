@@ -1,6 +1,6 @@
 if has('unix')
     let g:python3_host_prog = '/usr/bin/python3'
-    let s:nvim_home = $HOME . '/.config/nvim'
+    let s:nvim_home = $HOME
 endif
 
 if has('win64')
