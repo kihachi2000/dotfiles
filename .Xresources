@@ -1,0 +1,51 @@
+!! ~/.Xresources
+
+!!
+!! rxvt unicode
+!!
+
+URxvt.geometry: 96x32
+URxvt.scrollBar_right: true
+Urxvt.scrollBar_floating: true
+URxvt.cursorBlink: true
+URxvt.saveLines: 3000
+
+URxvt.font: xft:Dejavu SanS Mono-18
+URxvt.letterSpace: -1
+
+!! Special
+URxvt.foreground: #d0d0d0
+URxvt.background: #0a0d1a
+URxvt.cursorColor: #E5E9F0
+
+!! Black
+URxvt.color0: #2E3440
+URxvt.color8: #4C566A
+
+!! Red
+URxvt.color1: #dd4827
+URxvt.color9: #dd4827
+
+!! Green
+URxvt.color2: #99e8d4
+URxvt.color10: #99e8d4
+
+!! Yellow TODO
+URxvt.color3: #00ffff
+URxvt.color11: #00ffff
+
+!! Blue
+URxvt.color4: #176784
+URxvt.color12: #176784
+
+!! Magenta
+URxvt.color5: #f4af24
+URxvt.color13: #f4af24
+
+!! Cyan
+URxvt.color6: #9abdea
+URxvt.color14: #9abdea
+
+!! White
+URxvt.color7: #f8f8f8
+URxvt.color15: #f8f8f8
