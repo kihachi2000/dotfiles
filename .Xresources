@@ -26,25 +26,25 @@ URxvt.color8: #4C566A
 URxvt.color1: #dd4827
 URxvt.color9: #dd4827
 
-!! Green
-URxvt.color2: #99e8d4
-URxvt.color10: #99e8d4
+!! Cyan
+URxvt.color2: #9abdea
+URxvt.color10: #9abdea
 
 !! Yellow TODO
 URxvt.color3: #00ffff
 URxvt.color11: #00ffff
 
-!! Blue
-URxvt.color4: #176784
-URxvt.color12: #176784
+!! Green
+URxvt.color4: #99e8d4
+URxvt.color12: #99e8d4
 
 !! Magenta
 URxvt.color5: #f4af24
 URxvt.color13: #f4af24
 
-!! Cyan
-URxvt.color6: #9abdea
-URxvt.color14: #9abdea
+!! Blue
+URxvt.color6: #176784
+URxvt.color14: #176784
 
 !! White
 URxvt.color7: #f8f8f8
