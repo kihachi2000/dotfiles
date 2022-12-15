@@ -1,6 +1,8 @@
 *
 
 !.gitignore
+
+!.bashrc
 !.Xresources
 !init.vim
 !install.sh

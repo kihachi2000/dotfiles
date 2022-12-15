@@ -4,9 +4,10 @@
 !! rxvt unicode
 !!
 
-URxvt.geometry: 96x32
-URxvt.scrollBar_right: true
-Urxvt.scrollBar_floating: true
+#URxvt.geometry: 96x32
+URxvt.scrollBar: false
+#URxvt.scrollBar_right: true
+#Urxvt.scrollBar_floating: true
 URxvt.cursorBlink: true
 URxvt.saveLines: 3000
 
