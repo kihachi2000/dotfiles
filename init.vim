@@ -51,6 +51,7 @@ call dein#add('kyazdani42/blue-moon')
 " 見た目系
 call dein#add('nathanaelkane/vim-indent-guides')
 call dein#add('nvim-treesitter/nvim-treesitter', {'merged': 0})
+call dein#add('nvim-treesitter/playground')
 
 " ファイラー
 call dein#add('Shougo/defx.nvim')
@@ -83,7 +84,7 @@ call dein#add('tpope/vim-fugitive')
 
 " 自作
 call dein#add('Kenbayashi/retrieve.nvim')
-call dein#add('Kenbayashi/yash.nvim', {'branch': 'dev'})
+"call dein#add('Kenbayashi/yash.nvim', {'branch': 'dev'})
 
 
 " Required:
@@ -586,7 +587,7 @@ nnoremap <silent> ? :noh<CR>
 
 vnoremap y y`]
 
-nnoremap <Leader>s <cmd>SyntaxInfo<CR>
+nnoremap <Leader>s <cmd>TSHighlightCapturesUnderCursor<CR>
 
 nnoremap <Leader>r <cmd>source $HOME\AppData\Local\nvim\init.vim<CR>
 
@@ -694,46 +695,3 @@ let &t_EI .= "\e[2 q"
 
 " マウス有効化
 set mouse=a
-
-
-"----------------------------------------------------------------------
-" syntax hilight
-"----------------------------------------------------------------------
-
-function! s:get_syn_id(transparent)
-  let synid = synID(line("."), col("."), 1)
-  if a:transparent
-    return synIDtrans(synid)
-  else
-    return synid
-  endif
-endfunction
-function! s:get_syn_attr(synid)
-  let name = synIDattr(a:synid, "name")
-  let ctermfg = synIDattr(a:synid, "fg", "cterm")
-  let ctermbg = synIDattr(a:synid, "bg", "cterm")
-  let guifg = synIDattr(a:synid, "fg", "gui")
-  let guibg = synIDattr(a:synid, "bg", "gui")
-  return {
-        \ "name": name,
-        \ "ctermfg": ctermfg,
-        \ "ctermbg": ctermbg,
-        \ "guifg": guifg,
-        \ "guibg": guibg}
-endfunction
-function! s:get_syn_info()
-  let baseSyn = s:get_syn_attr(s:get_syn_id(0))
-  echo "name: " . baseSyn.name .
-        \ " ctermfg: " . baseSyn.ctermfg .
-        \ " ctermbg: " . baseSyn.ctermbg .
-        \ " guifg: " . baseSyn.guifg .
-        \ " guibg: " . baseSyn.guibg
-  let linkedSyn = s:get_syn_attr(s:get_syn_id(1))
-  echo "link to"
-  echo "name: " . linkedSyn.name .
-        \ " ctermfg: " . linkedSyn.ctermfg .
-        \ " ctermbg: " . linkedSyn.ctermbg .
-        \ " guifg: " . linkedSyn.guifg .
-        \ " guibg: " . linkedSyn.guibg
-endfunction
-command! SyntaxInfo call s:get_syn_info()
