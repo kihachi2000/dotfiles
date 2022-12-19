@@ -1,11 +1,13 @@
 if has('unix')
     let g:python3_host_prog = '/usr/bin/python3'
-    let s:nvim_home = $HOME
+    let s:nvim_cache = $HOME . '/.cache'
+    let s:dotfiles = $HOME . '/.dotfiles'
 endif
 
 if has('win64')
     let g:python3_host_prog = $HOME . '\AppData\Local\Programs\Python\Python39\python.exe'
-    let s:nvim_home = $HOME . '\AppData\Local\nvim'
+    let s:nvim_cache = $HOME . '/.cache/nvim'
+    let s:dotfiles = $HOME . '\git\.dotfiles'
 endif
 
 "----------------------------------------------------------------------
@@ -21,15 +23,15 @@ if has('unix')
 endif
 
 if has('win64')
-    set runtimepath+=$HOME\AppData\Local\nvim\.cache\dein\repos\github.com\Shougo\dein.vim
+    set runtimepath+=$HOME/.cache/nvim/dein/repos/github.com/Shougo/dein.vim
 endif
 
 " Required:
-call dein#begin(s:nvim_home . '/.cache/dein')
+call dein#begin(s:nvim_cache . '/dein')
 
 " Let dein manage dein
 " Required:
-call dein#add(s:nvim_home . '/.cache/dein/repos/github.com/Shougo/dein.vim')
+call dein#add(s:nvim_cache . '/dein/repos/github.com/Shougo/dein.vim')
 
 " zenbonesの依存プラグイン
 call dein#add('rktjmp/lush.nvim')
@@ -363,7 +365,7 @@ function! s:defx_my_settings() abort
     nnoremap<silent><buffer><expr> cd
                 \ defx#do_action('cd',[])
     nnoremap<silent><buffer><expr> rc
-                \ defx#do_action('cd',[s:nvim_home])
+                \ defx#do_action('cd',[expand(s:dotfiles)])
     nnoremap<silent><buffer><expr> doc
                 \ defx#do_action('cd',[$HOME . '\Documents'])
     nnoremap<silent><buffer><expr> git
