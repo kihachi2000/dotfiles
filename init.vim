@@ -84,7 +84,7 @@ call dein#add('tpope/vim-fugitive')
 
 " 自作
 call dein#add('Kenbayashi/retrieve.nvim')
-"call dein#add('Kenbayashi/yash.nvim', {'branch': 'dev'})
+call dein#add('Kenbayashi/yash.nvim')
 
 
 " Required:
@@ -143,7 +143,6 @@ require'nvim-treesitter.configs'.setup {
     highlight = {
         enable = true,
         disable = {
-            'lua',
         }
     },
     indent = {
