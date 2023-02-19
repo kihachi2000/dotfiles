@@ -57,7 +57,6 @@ call dein#add('nvim-treesitter/playground')
 call dein#add('Shougo/defx.nvim')
 
 " 編集ツール
-call dein#add('mhinz/vim-sayonara')   "バッファツール
 call dein#add('cohama/lexima.vim')
 call dein#add('tpope/vim-surround')
 call dein#add('unblevable/quick-scope')
@@ -563,7 +562,6 @@ nnoremap K 3<C-y>
 nnoremap J 3<C-e>
 
 nnoremap <silent> <leader>bb <cmd>b#<CR>
-nnoremap <silent> <leader>bd <cmd>Sayonara<CR>
 
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
