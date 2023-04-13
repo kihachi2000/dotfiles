@@ -2,8 +2,9 @@
 
 !.gitignore
 
+!.Xresources
 !.bashrc
 !.wezterm.lua
-!.Xresources
 !init.vim
 !install.sh
+!nvim/
