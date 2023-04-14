@@ -9,7 +9,14 @@ local vsnip_tab = function ()
 
         vim.api.nvim_feedkeys(key, "n", true)
     else
-        vim.api.nvim_feedkeys("<Tab>", "n", true)
+        local key = vim.api.nvim_replace_termcodes(
+            "<Tab>",
+            true,
+            true,
+            true
+        )
+
+        vim.api.nvim_feedkeys(key, "n", true)
     end
 end
 
@@ -24,7 +31,14 @@ local vsnip_shift_tab = function ()
 
         vim.api.nvim_feedkeys(key, "n", true)
     else
-        vim.api.nvim_feedkeys("<S-Tab>", "n", true)
+        local key = vim.api.nvim_replace_termcodes(
+            "<S-Tab>",
+            true,
+            true,
+            true
+        )
+
+        vim.api.nvim_feedkeys(key, "n", true)
     end
 end
 
