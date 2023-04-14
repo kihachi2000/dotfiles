@@ -1,11 +1,14 @@
 *
 !*/
 
-!.gitignore
+!/.gitignore
 
-!.Xresources
-!.bashrc
-!.wezterm.lua
-!init.vim
-!install.sh
-!nvim/
+!/.Xresources
+!/.bashrc
+!/.wezterm.lua
+!/init.vim
+!/install.sh
+!/nvim/**
+
+.DS_Store
+.Thumbs.db
