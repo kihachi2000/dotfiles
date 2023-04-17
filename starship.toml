@@ -1,0 +1,28 @@
+scan_timeout = 10
+add_newline = false
+
+format = '$directory$git_branch$character'
+
+palette = 'yash'
+
+[palettes.yash]
+light_gray = "#d0d0d0"
+dark_gray = "#a0a0a0"
+red = "#dd4827"
+blue = "#9abdea"
+green = "#99e8a4"
+light_orange = "#f9dd9f"
+dark_orange = "#f4af24"
+purple = "#d0a7ef"
+yellow = "#00ffff"
+white = "#ffffff"
+
+[character]
+success_symbol = '[ \$](white)'
+error_symbol = '[ \$](white)'
+
+[directory]
+format = '[$path](bold dark_orange)'
+
+[git_branch]
+format = ' \([$branch](blue)\)'
