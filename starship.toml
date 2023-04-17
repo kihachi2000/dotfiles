@@ -18,14 +18,14 @@ yellow = "#00ffff"
 white = "#ffffff"
 
 [character]
-success_symbol = '[\$](white)'
-error_symbol = '[\$](white)'
+success_symbol = ' [\$](white)'
+error_symbol = ' [\$](white)'
 
 [directory]
 format = '[$path](bold dark_orange)'
 
 [git_branch]
-format = ' \([$branch](blue)\)'
+format = '\([$branch](blue)\)'
 
 [git_status]
 format = '$modified$staged'
