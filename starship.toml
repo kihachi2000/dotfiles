@@ -1,7 +1,7 @@
 scan_timeout = 10
 add_newline = false
 
-format = '$directory$git_branch$character'
+format = '$directory$git_branch$git_status$character'
 
 palette = 'yash'
 
@@ -26,3 +26,8 @@ format = '[$path](bold dark_orange)'
 
 [git_branch]
 format = ' \([$branch](blue)\)'
+
+[git_status]
+format = '$modified$staged'
+modified = '\[a\]'
+staged = '\[c\]'
