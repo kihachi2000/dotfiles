@@ -1,0 +1,16 @@
+*
+!*/
+
+!/.gitignore
+
+!/.Xresources
+!/.bashrc
+!/.wezterm.lua
+!/.zshrc
+!/init.vim
+!/install.sh
+!/nvim/**
+!/starship.toml
+
+.DS_Store
+.Thumbs.db
