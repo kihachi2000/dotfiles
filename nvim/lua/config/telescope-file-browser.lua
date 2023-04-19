@@ -3,6 +3,7 @@ local fb_actions = require("telescope").extensions.file_browser.actions
 
 -- ファイラー設定
 local file_browser = {
+    path = "%:p:h",
     theme = "dropdown",
     hide_parent_dir = true,
     hijack_netrw = true,
@@ -16,6 +17,8 @@ local file_browser = {
             ["<Tab>"] = actions.close,
             ["h"] = fb_actions.goto_parent_dir,
             ["l"] = actions.select_default,
+            ["m"] = fb_actions.change_cwd,
+            ["M"] = fb_actions.goto_cwd,
             ["."] = fb_actions.toggle_hidden,
             ["<S-Tab>"] = false,
             ["<CR>"] = actions.select_vertical,
@@ -27,9 +30,8 @@ local file_browser = {
 vim.api.nvim_set_keymap(
     "n",
     "<Tab>",
-    "<cmd>Telescope file_browser path=%:p:h<CR>",
+    "<cmd>Telescope file_browser<CR>",
     { noremap = true }
 )
-
 
 return file_browser
