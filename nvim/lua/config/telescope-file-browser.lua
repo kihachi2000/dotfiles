@@ -4,7 +4,10 @@ local fb_actions = require("telescope").extensions.file_browser.actions
 -- ファイラー設定
 local file_browser = {
     theme = "dropdown",
+    hide_parent_dir = true,
     hijack_netrw = true,
+    display_stat = { mode = true, size = false, date = true },
+    --git_status = false,
     mappings = {
         ["i"] = {
             ["<Tab>"] = actions.close,
@@ -24,7 +27,7 @@ local file_browser = {
 vim.api.nvim_set_keymap(
     "n",
     "<Tab>",
-    "<cmd>Telescope file_browser hide_parent_dir=true<CR>",
+    "<cmd>Telescope file_browser path=%:p:h<CR>",
     { noremap = true }
 )
 
