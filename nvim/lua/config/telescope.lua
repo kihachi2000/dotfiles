@@ -30,12 +30,11 @@ require("telescope").setup {
     }
 }
 
-vim.api.nvim_set_hl(0, "TelescopeBorder", {bg="#181f3e"})
---vim.api.nvim_set_hl(0, "TelescopeMatching", {fg="#9abdea"})
-vim.api.nvim_set_hl(0, "TelescopeMatching", {fg="#f4af24"})
-vim.api.nvim_set_hl(0, "TelescopePromptNormal", {bg="#181f3e"})
-vim.api.nvim_set_hl(0, "TelescopePromptPrefix", {fg="#f4af24"})
-vim.api.nvim_set_hl(0, "TelescopeResultsNormal", {bg="#181f3e", fg="#d0d0d0"})
-vim.api.nvim_set_hl(0, "TelescopeSelection", {bg="#4054a5"})
+--vim.api.nvim_set_hl(0, "TelescopeBorder", {bg="#181f3e"})
+--vim.api.nvim_set_hl(0, "TelescopeMatching", {fg="#f4af24"})
+--vim.api.nvim_set_hl(0, "TelescopePromptNormal", {bg="#181f3e"})
+--vim.api.nvim_set_hl(0, "TelescopePromptPrefix", {fg="#f4af24"})
+--vim.api.nvim_set_hl(0, "TelescopeResultsNormal", {bg="#181f3e", fg="#d0d0d0"})
+--vim.api.nvim_set_hl(0, "TelescopeSelection", {bg="#4054a5"})
 
 require("telescope").load_extension("file_browser")
