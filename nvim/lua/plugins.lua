@@ -77,7 +77,7 @@ return require("packer").startup(function(use)
     }
 
     -- 自作
-    use "Kenbayashi/yash.nvim"
+    --use "Kenbayashi/yash.nvim"
     use  {
         "Kenbayashi/retrieve.nvim",
         config = function() require("config.retrieve") end
