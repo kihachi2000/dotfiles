@@ -7,5 +7,6 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias nvimconf='nvim ~/.config/nvim/init.lua'
+alias dotfiles='cd ~/git/dotfiles'
 
 eval "$(starship init zsh)"
