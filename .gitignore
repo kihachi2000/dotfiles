@@ -12,5 +12,7 @@
 !/nvim/**
 !/starship.toml
 
+/nvim/plugin/**
+
 .DS_Store
 .Thumbs.db
