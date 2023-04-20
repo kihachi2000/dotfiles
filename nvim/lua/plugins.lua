@@ -44,6 +44,12 @@ return require("packer").startup(function(use)
     }
 
     use {
+        "nvim-lualine/lualine.nvim",
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true },
+        config = function() require("config.lualine") end
+    }
+
+    use {
         "lukas-reineke/indent-blankline.nvim",
         config = function() require("config.indent-blankline") end
     }
