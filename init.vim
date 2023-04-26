@@ -453,17 +453,17 @@ local theme = require("telescope.themes").get_dropdown({
 
 local builtin = require("telescope.builtin")
 local function find_files()
-    theme.prompt_prefix = "File: "
+    theme.prompt_prefix = "  File: "
     return builtin.find_files(theme)
 end
 
 local function live_grep()
-    theme.prompt_prefix = "Grep: "
+    theme.prompt_prefix = "  Grep: "
     return builtin.live_grep(theme)
 end
 
 local function buffers()
-    theme.prompt_prefix = "Buffer: "
+    theme.prompt_prefix = "  Buffer: "
     return builtin.buffers(theme)
 end
 
