@@ -22,6 +22,12 @@ sections.lualine_x = {"encoding"}
 sections.lualine_y = {"progress"}
 sections.lualine_z = {"location"}
 
+local error_fg = "#f72922"
+local warn_fg = "#f98022"
+local light_gray = "#d0d0d0"
+vim.api.nvim_set_hl(0, "LualineError", { fg = error_fg, bg = light_gray })
+vim.api.nvim_set_hl(0, "LualineWarning", { fg = warn_fg, bg = light_gray })
+
 require("lualine").setup {
     options = options,
     sections = sections,
