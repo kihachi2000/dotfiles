@@ -8,8 +8,13 @@ wezterm.on('gui-startup', function(cmd)
 end)
 
 return {
-    font_size = 16.0,
-    font = wezterm.font "Ricty Diminished",
+    font_size = 15.0,
+    line_height = 0.85,
+    
+    font = wezterm.font_with_fallback({
+        "M+ 1m",
+        "Noto Emoji",
+    }),
     native_macos_fullscreen_mode = false,
     window_decorations = "RESIZE",
 }

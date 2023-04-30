@@ -1,14 +1,10 @@
 -- キーコンフィグ
-vim.api.nvim_set_keymap("n", "<Leader>i", "lua vim.lsp.buf.hover()<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<Leader>d", "lua vim.lsp.buf.definition()<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<Leader>D", "lua vim.lsp.buf.declaration()<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<Leader>r", "lua vim.lsp.buf.rename()<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<Leader>m", "lua vim.lsp.buf.formatting()<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<Leader>e", "lua vim.lsp.buf.diagnostic.show_line_diagnostics()<CR>", {noremap = true, silent = true})
-
--- 自動でポップを表示する設定
---set updatetime=200
---autocmd CursorHold * lua vim.diagnostic.open_float(0, {scope="line", focus=false})
+vim.api.nvim_set_keymap("n", "<Leader>i", "<cmd>lua vim.lsp.buf.hover()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Leader>d", "<cmd>lua vim.lsp.buf.definition()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Leader>D", "<cmd>lua vim.lsp.buf.declaration()<CR>", {noremap = true, silent = true})
+--vim.api.nvim_set_keymap("n", "<Leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>", {noremap = true, silent = true})
+--vim.api.nvim_set_keymap("n", "<Leader>m", "<cmd>lua vim.lsp.buf.formatting()<CR>", {noremap = true, silent = true})
+--vim.api.nvim_set_keymap("n", "<Leader>e", "<cmd>lua vim.lsp.buf.diagnostic.show_line_diagnostics()<CR>", {noremap = true, silent = true})
 
 -- カラースキーム上書き
 --sign define DiagnosticSignError text= texthl= linehl=DiagnosticLineError numhl=DiagnosticLineNrError
