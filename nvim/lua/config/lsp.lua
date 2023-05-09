@@ -1,9 +1,9 @@
 -- キーコンフィグ
-vim.api.nvim_set_keymap("n", "<Leader>i", "<cmd>lua vim.lsp.buf.hover()<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<Leader>d", "<cmd>lua vim.lsp.buf.definition()<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<Leader>D", "<cmd>lua vim.lsp.buf.declaration()<CR>", {noremap = true, silent = true})
+vim.keymap.set("n", "<Leader>i", vim.lsp.buf.hover, {noremap = true, silent = true})
+vim.keymap.set("n", "<Leader>d", vim.lsp.buf.definition, {noremap = true, silent = true})
+vim.keymap.set("n", "<Leader>D", vim.lsp.buf.declaration, {noremap = true, silent = true})
+vim.keymap.set("n", "<Leader>m", vim.lsp.buf.format, {noremap = true, silent = true})
 --vim.api.nvim_set_keymap("n", "<Leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>", {noremap = true, silent = true})
---vim.api.nvim_set_keymap("n", "<Leader>m", "<cmd>lua vim.lsp.buf.formatting()<CR>", {noremap = true, silent = true})
 --vim.api.nvim_set_keymap("n", "<Leader>e", "<cmd>lua vim.lsp.buf.diagnostic.show_line_diagnostics()<CR>", {noremap = true, silent = true})
 
 -- カラースキーム上書き
