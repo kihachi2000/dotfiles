@@ -20,10 +20,6 @@ local nvim_lsp = require('lspconfig')
 local mason_lspconfig = require('mason-lspconfig')
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-local nvim_lsp = require('lspconfig')
-local mason_lspconfig = require('mason-lspconfig')
-local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
-
 mason_lspconfig.setup_handlers({
     function(server_name)
         local opts = {}
@@ -69,12 +65,3 @@ nvim_lsp.sourcekit.setup{capabilities = capabilities}
 --nvim_lsp.cssls.setup{capabilities = capabilities}
 --nvim_lsp.tsserver.setup{capabilities = capabilities}
 --nvim_lsp.jsonls.setup{capabilities = capabilities}
-
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-    vim.lsp.diagnostic.on_publish_diagnostics,
-    {
-        virtual_text = false,
-        underline = true,
-        signs = true,
-    }
-)

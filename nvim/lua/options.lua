@@ -78,3 +78,10 @@ vim.api.nvim_set_hl(0, "CursorLine", {})
 
 -- カーソルラインの行番号の強調設定
 -- vim.api.nvim_set_hl(0, "CursorLineNr", { bold = true })
+
+-- 警告の表示設定
+vim.diagnostic.config({
+    virtual_text = false,
+    underline = true,
+    signs = true,
+})
