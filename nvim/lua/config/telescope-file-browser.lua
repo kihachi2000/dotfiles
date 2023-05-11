@@ -22,16 +22,11 @@ local file_browser = {
             ["."] = fb_actions.toggle_hidden,
             ["<S-Tab>"] = false,
             ["<CR>"] = actions.select_vertical,
-        }
-    }
+        },
+    },
 }
 
 -- キー設定
-vim.api.nvim_set_keymap(
-    "n",
-    "<Tab>",
-    "<cmd>Telescope file_browser<CR>",
-    { noremap = true }
-)
+vim.api.nvim_set_keymap("n", "<Tab>", "<cmd>Telescope file_browser<CR>", { noremap = true })
 
 return file_browser

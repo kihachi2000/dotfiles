@@ -1,10 +1,10 @@
-vim.keymap.set("n", "<C-p>", "<cmd>Telescope find_files theme=dropdown<CR>", {noremap = false})
-vim.keymap.set("n", "<C-g>", "<cmd>Telescope live_grep theme=dropdown<CR>", {noremap = false})
-vim.keymap.set("n", "<C-b>", "<cmd>Telescope buffers theme=dropdown<CR>", {noremap = false})
+vim.keymap.set("n", "<C-p>", "<cmd>Telescope find_files theme=dropdown<CR>", { noremap = false })
+vim.keymap.set("n", "<C-g>", "<cmd>Telescope live_grep theme=dropdown<CR>", { noremap = false })
+vim.keymap.set("n", "<C-b>", "<cmd>Telescope buffers theme=dropdown<CR>", { noremap = false })
 
 local actions = require("telescope.actions")
 
-require("telescope").setup {
+require("telescope").setup({
     defaults = {
         theme = require("telescope.themes").get_dropdown(),
         preview = false,
@@ -22,13 +22,13 @@ require("telescope").setup {
                 ["<S-Tab>"] = false,
                 ["<CR>"] = actions.select_default,
                 ["<S-CR>"] = actions.select_vertical,
-            }
-        }
+            },
+        },
     },
     extensions = {
         file_browser = require("config.telescope-file-browser"),
-    }
-}
+    },
+})
 
 --vim.api.nvim_set_hl(0, "TelescopeBorder", {bg="#181f3e"})
 --vim.api.nvim_set_hl(0, "TelescopeMatching", {fg="#f4af24"})

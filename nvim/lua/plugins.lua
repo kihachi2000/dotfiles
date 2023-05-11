@@ -1,22 +1,23 @@
 return require("packer").startup(function(use)
-    use "wbthomason/packer.nvim"
+    use("wbthomason/packer.nvim")
 
     -- ファイラー
-    use {
+    use({
         "nvim-telescope/telescope.nvim",
         tag = "0.1.1",
-        requires = {"nvim-lua/plenary.nvim"},
-        config = function() require("config.telescope") end
-    }
+        requires = { "nvim-lua/plenary.nvim" },
+        config = function()
+            require("config.telescope")
+        end,
+    })
 
-    use {
+    use({
         "nvim-telescope/telescope-file-browser.nvim",
-        requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
-    }
-
+        requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+    })
 
     -- 補完
-    use {
+    use({
         "hrsh7th/nvim-cmp",
         requires = {
             "hrsh7th/cmp-nvim-lsp",
@@ -26,72 +27,89 @@ return require("packer").startup(function(use)
             "hrsh7th/cmp-nvim-lua",
             "hrsh7th/cmp-vsnip",
             "hrsh7th/vim-vsnip",
-            "hrsh7th/vim-vsnip-integ"
+            "hrsh7th/vim-vsnip-integ",
         },
         config = function()
             require("config.cmp")
             require("config.vsnip")
-        end
-    }
+        end,
+    })
 
-    use {
+    use({
         "jose-elias-alvarez/null-ls.nvim",
         requires = { "nvim-lua/plenary.nvim" },
-        config = function() require("config.null-ls") end
-    }
-
+        config = function()
+            require("config.null-ls")
+        end,
+    })
 
     -- 見た目系
-    use {
+    use({
         "nvim-treesitter/nvim-treesitter",
-        requires = {"nvim-treesitter/playground"},
+        requires = { "nvim-treesitter/playground" },
         run = "<cmd>TSUpdate<CR>",
-        config = function() require("config.treesitter") end
-    }
+        config = function()
+            require("config.treesitter")
+        end,
+    })
 
-    use {
+    use({
         "nvim-lualine/lualine.nvim",
-        requires = { 'nvim-tree/nvim-web-devicons', opt = true },
-        config = function() require("config.lualine") end
-    }
+        requires = { "nvim-tree/nvim-web-devicons", opt = true },
+        config = function()
+            require("config.lualine")
+        end,
+    })
 
-    use {
+    use({
         "lukas-reineke/indent-blankline.nvim",
-        config = function() require("config.indent-blankline") end
-    }
+        config = function()
+            require("config.indent-blankline")
+        end,
+    })
 
     -- 編集ツール
-    use {
+    use({
         "phaazon/hop.nvim",
         branch = "v2",
-        config = function() require("config.hop") end
-    }
+        config = function()
+            require("config.hop")
+        end,
+    })
 
-    use {
+    use({
         "cohama/lexima.vim",
-        config = function() require("config.lexima") end
-    }
+        config = function()
+            require("config.lexima")
+        end,
+    })
 
-    use {
+    use({
         "kylechui/nvim-surround",
         tag = "*",
-        config = function() require("config.nvim-surround") end
-    }
+        config = function()
+            require("config.nvim-surround")
+        end,
+    })
 
-    use {
+    use({
         "williamboman/mason.nvim",
         requires = {
             "williamboman/mason-lspconfig",
             "neovim/nvim-lspconfig",
         },
-        config = function() require("config.lsp") end,
-        run = ":MasonUpdate"
-    }
+        config = function()
+            require("config.lsp")
+        end,
+        run = ":MasonUpdate",
+    })
 
     -- 自作
     --use "Kenbayashi/yash.nvim"
-    use  {
+    use({
         "Kenbayashi/retrieve.nvim",
-        config = function() require("config.retrieve") end
-    }
+        config = function()
+            require("config.retrieve")
+        end,
+    })
 end)
