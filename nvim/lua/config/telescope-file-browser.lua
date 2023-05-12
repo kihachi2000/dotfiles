@@ -5,6 +5,7 @@ local fb_actions = require("telescope").extensions.file_browser.actions
 local file_browser = {
     path = "%:p:h",
     theme = "dropdown",
+    initial_mode = "normal",
     hide_parent_dir = true,
     hijack_netrw = true,
     display_stat = { mode = true, size = false, date = true },
