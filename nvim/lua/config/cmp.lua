@@ -11,11 +11,7 @@ cmp.setup({
     mapping = cmp.mapping.preset.insert({
         ["<C-n>"] = cmp.mapping.select_next_item(),
         ["<C-p>"] = cmp.mapping.select_prev_item(),
-        ["<C-y>"] = cmp.mapping({
-            i = cmp.mapping.abort(),
-            c = cmp.mapping.close(),
-        }),
-        ["<CR>"] = cmp.mapping.confirm({ select = true }),
+        ["<CR>"] = cmp.mapping.confirm({ select = false }),
     }),
 
     sources = cmp.config.sources({
@@ -28,18 +24,14 @@ cmp.setup({
 })
 
 cmp.setup.cmdline("/", {
+    mapping = cmp.mapping.preset.cmdline(),
     sources = {
         { name = "buffer" },
     },
 })
 
 cmp.setup.cmdline(":", {
-    mapping = cmp.mapping.preset.insert({
-        ["<C-n>"] = cmp.mapping.select_next_item(),
-        ["<C-p>"] = cmp.mapping.select_prev_item(),
-        ["<CR>"] = cmp.mapping.confirm({ select = true }),
-    }),
-
+    mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources({
         { name = "path" },
     }, {
