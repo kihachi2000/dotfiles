@@ -1,7 +1,7 @@
-vim.api.nvim_set_hl(0, "OddIndent", { bg="#11162c", nocombine=true })
-vim.api.nvim_set_hl(0, "EvenIndent", { bg="#181f3e", nocombine=true })
+vim.api.nvim_set_hl(0, "OddIndent", { bg = "#11162c", nocombine = true })
+vim.api.nvim_set_hl(0, "EvenIndent", { bg = "#181f3e", nocombine = true })
 
-require("indent_blankline").setup {
+require("indent_blankline").setup({
     char = "",
     char_highlight_list = {
         "OddIndent",
@@ -12,4 +12,4 @@ require("indent_blankline").setup {
         "EvenIndent",
     },
     show_trailing_blankline_indent = false,
-}
+})

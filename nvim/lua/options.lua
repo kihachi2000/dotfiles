@@ -1,6 +1,5 @@
 local opt = vim.opt
 
-
 -- 基本
 
 -- 文字コード
@@ -27,7 +26,6 @@ opt.scrolloff = 2
 -- 新しいウィンドウを右に開く
 opt.splitright = true
 
-
 -- 検索
 
 -- 検索時に大文字小文字を区別しない
@@ -42,7 +40,6 @@ opt.incsearch = true
 
 -- 検索結果をハイライト
 opt.hlsearch = true
-
 
 -- 表示
 
@@ -78,3 +75,10 @@ vim.api.nvim_set_hl(0, "CursorLine", {})
 
 -- カーソルラインの行番号の強調設定
 -- vim.api.nvim_set_hl(0, "CursorLineNr", { bold = true })
+
+-- 警告の表示設定
+vim.diagnostic.config({
+    virtual_text = false,
+    underline = true,
+    signs = true,
+})
