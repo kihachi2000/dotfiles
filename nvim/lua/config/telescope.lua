@@ -12,8 +12,8 @@ require("telescope").setup({
         initial_mode = "insert",
         mappings = {
             ["i"] = {
-                ["<CR>"] = actions.select_default,
-                ["<S-CR>"] = actions.select_vertical,
+                ["<CR>"] = { "<ESC>", type = "command" },
+                ["<S-CR>"] = actions.select_default,
             },
             ["n"] = {
                 ["<Tab>"] = false,
