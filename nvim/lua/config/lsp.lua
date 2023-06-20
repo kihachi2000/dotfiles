@@ -24,6 +24,12 @@ mason_lspconfig.setup_handlers({
     function(server_name)
         local opts = {}
 
+        -- LSPのhighlight機能を無効化する
+        -- treesitterを使うため必要ない
+        opts.on_attach = function(client, _)
+            client.server_capabilities.semanticTokensProvider = nil
+        end
+
         if server_name == "jdtls" then
             opts.capabilities = capabilities
             opts.cmd = {
