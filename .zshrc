@@ -1,5 +1,6 @@
 # path
 export PATH=$PATH:/opt/homebrew/bin
+export PATH=$PATH:$HOME/.cargo/bin
 
 # alias
 alias ls='ls -l --color=auto'
