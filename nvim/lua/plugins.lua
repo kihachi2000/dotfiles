@@ -104,6 +104,11 @@ return require("packer").startup(function(use)
         run = ":MasonUpdate",
     })
 
+    -- カラースキーム
+    use({ "catppuccin/nvim", as = "catppuccin" })
+    use({ "folke/tokyonight.nvim" })
+    use({ "rebelot/kanagawa.nvim" })
+
     -- 自作
     --use "Kenbayashi/yash.nvim"
     use({
