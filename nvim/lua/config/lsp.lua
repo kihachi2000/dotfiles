@@ -30,7 +30,7 @@ mason_lspconfig.setup_handlers({
             client.server_capabilities.semanticTokensProvider = nil
         end
 
-        if server_name == "jdtls" then
+        if server_name == "jdtls" and false then
             opts.capabilities = capabilities
             opts.cmd = {
                 "java",
