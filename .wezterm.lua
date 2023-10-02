@@ -12,7 +12,7 @@ local config = {}
 local arch = wezterm.target_triple
 if arch == "x86_64-pc-windows-msvc" then
     -- for Windows
-    config.default_prog = { "PowerShell.exe", "-NoLogo" }
+    config.default_prog = { "wsl", "~" }
 elseif arch == "x86_64-apple-darwin" or arch == "aarch64-apple-darwin" then
     -- for Mac
     config.native_macos_fullscreen_mode = false
