@@ -1,15 +1,16 @@
-vim.api.nvim_set_hl(0, "OddIndent", { bg = "#11162c", nocombine = true })
-vim.api.nvim_set_hl(0, "EvenIndent", { bg = "#181f3e", nocombine = true })
+local hooks = require("ibl.hooks")
+hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+    vim.api.nvim_set_hl(0, "OddIndent", { bg = "#11162c", nocombine = true })
+    vim.api.nvim_set_hl(0, "EvenIndent", { bg = "#181f3e", nocombine = true })
+end)
 
-require("indent_blankline").setup({
-    char = "",
-    char_highlight_list = {
-        "OddIndent",
-        "EvenIndent",
-    },
-    space_char_highlight_list = {
-        "OddIndent",
-        "EvenIndent",
-    },
-    show_trailing_blankline_indent = false,
+local highlight_list = {
+	"OddIndent",
+	"EvenIndent",
+}
+
+require("ibl").setup({
+	indent = { highlight = highlight_list, char = "" },
+	whitespace = { highlight = highlight_list, remove_blankline_trail = false },
+	scope = { enabled = false },
 })
