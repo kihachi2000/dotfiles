@@ -1,5 +1,6 @@
 # path
 export PATH=$PATH:/opt/homebrew/bin
+export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:$HOME/.ghcup/bin
 export PATH=$PATH:$HOME/.cabal/bin

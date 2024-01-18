@@ -12,6 +12,7 @@ return {
                 null_ls.builtins.formatting.prettier,
                 null_ls.builtins.formatting.stylua,
                 null_ls.builtins.formatting.rustfmt,
+                null_ls.builtins.formatting.stylish_haskell,
             },
         })
     end,
