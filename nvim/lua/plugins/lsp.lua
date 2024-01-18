@@ -52,6 +52,7 @@ return {
         mason_lspconfig.setup_handlers({
             function(server_name)
                 local opts = {}
+                opts.capabilities = capabilities
 
                 -- LSPのhighlight機能を無効化する
                 -- treesitterを使うため必要ない
@@ -60,7 +61,6 @@ return {
                 end
 
                 if server_name == "jdtls" and false then
-                    opts.capabilities = capabilities
                     opts.cmd = {
                         "java",
                         "-Declipse.application=org.eclipse.jdt.ls.core.id1",

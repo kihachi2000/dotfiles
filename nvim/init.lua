@@ -17,5 +17,5 @@ end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
 
---require("autocmds")
+require("autocmds")
 require("colorscheme")
