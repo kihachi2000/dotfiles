@@ -1,6 +1,8 @@
 # path
 export PATH=$PATH:/opt/homebrew/bin
 export PATH=$PATH:$HOME/.cargo/bin
+export PATH=$PATH:$HOME/.ghcup/bin
+export PATH=$PATH:$HOME/.cabal/bin
 
 # alias
 alias ls='ls -l --color=auto'
@@ -14,3 +16,4 @@ alias dotfiles='cd ~/git/dotfiles'
 alias tedvit='cd ~/lab/vs-tedvit'
 
 eval "$(starship init zsh)"
+
