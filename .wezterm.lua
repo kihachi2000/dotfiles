@@ -32,7 +32,7 @@ config.keys = {
 	{
 		key = "t",
 		mods = "CTRL",
-		action = wezterm.action.SpawnTab("CurrantPaneDomain"),
+		action = wezterm.action.SpawnTab("CurrentPaneDomain"),
 	},
 }
 
