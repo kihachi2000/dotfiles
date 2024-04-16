@@ -64,18 +64,6 @@ opt.signcolumn = "yes"
 -- カーソルラインを有効化
 opt.cursorline = true
 
--- EOF以降の背景色をNormalに統一
-vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
-
--- マルチウインドウの縦線を隠す
-vim.api.nvim_set_hl(0, "VertSplit", { bg = "none", fg = "none" })
-
--- カーソルラインの色を透明にする
-vim.api.nvim_set_hl(0, "CursorLine", {})
-
--- カーソルラインの行番号の強調設定
--- vim.api.nvim_set_hl(0, "CursorLineNr", { bold = true })
-
 -- 警告の表示設定
 vim.diagnostic.config({
     virtual_text = false,
