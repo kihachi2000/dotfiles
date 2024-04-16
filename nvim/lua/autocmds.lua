@@ -1,8 +1,3 @@
-vim.api.nvim_create_autocmd("BufWritePost", {
-    pattern = "plugins.lua",
-    command = "PackerCompile",
-})
-
 -- CursorHoldが発火するまでの時間
 vim.opt.updatetime = 200
 vim.api.nvim_create_autocmd("CursorHold", {
