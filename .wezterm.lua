@@ -8,6 +8,10 @@ wezterm.on("gui-startup", function(cmd)
 end)
 
 local config = {}
+if wezterm.config_builder then
+    config = wezterm.config_builder()
+end
+
 local arch = wezterm.target_triple
 if arch == "x86_64-pc-windows-msvc" then
 	-- for Windows
