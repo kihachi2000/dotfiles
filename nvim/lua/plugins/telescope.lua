@@ -19,7 +19,7 @@ vim.keymap.set(
 
 return {
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.5",
+    tag = "0.1.8",
     depencies = { "nvim-lua/plenary.nvim" },
     config = function()
         local actions = require("telescope.actions")
