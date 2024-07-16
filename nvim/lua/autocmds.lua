@@ -7,3 +7,21 @@ vim.api.nvim_create_autocmd("CursorHold", {
         end
     end,
 })
+
+-- ターミナルを開いたらinsertモードに入る
+vim.api.nvim_create_autocmd(
+    "TermOpen",
+    {
+        pattern = "*",
+        command = "startinsert",
+    }
+)
+
+-- ターミナルモードでは行番号を非表示
+vim.api.nvim_create_autocmd("TermOpen", {
+    pattern = "*",
+    callback = function()
+        vim.api.nvim_buf_set_option(0, "number", false)
+        vim.api.nvim_buf_set_option(0, "relativenumber", false)
+    end
+})
