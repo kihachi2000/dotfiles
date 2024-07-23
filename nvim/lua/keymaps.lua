@@ -38,3 +38,5 @@ keymap("n", "?", "<cmd>noh<CR>", opts)
 keymap("v", "y", "y`]", opts)
 
 keymap("n", "<leader>r", "<cmd>TSHighlightCapturesUnderCursor<CR>", opts)
+
+keymap("t", "<ESC>", "<C-\\><C-n>", opts)
