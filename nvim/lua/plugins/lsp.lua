@@ -49,6 +49,19 @@ return {
             vim.lsp.protocol.make_client_capabilities()
         )
 
+        mason_lspconfig.setup({
+            ensure_installed = {
+                "dockerls",
+                "eslint",
+                "jdtls",
+                "lua_ls",
+                "prettier",
+                "rust_analyzer",
+                "stylua",
+                "ts_ls",
+            }
+        })
+
         mason_lspconfig.setup_handlers({
             function(server_name)
                 local opts = {}
