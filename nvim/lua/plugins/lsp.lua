@@ -1,9 +1,5 @@
 return {
-    "williamboman/mason.nvim",
-    dependencies = {
-        "williamboman/mason-lspconfig",
-        "neovim/nvim-lspconfig",
-    },
+    "neovim/nvim-lspconfig",
     config = function()
         -- キーコンフィグ
         vim.keymap.set(
@@ -40,28 +36,21 @@ return {
         --sign define DiagnosticSignInfo text= texthl= linehl=DiagnosticLineInfo numhl=DiagnosticLineNrInfo
 
         -- lsp本体の設定
-        require("mason").setup()
-        require("mason-lspconfig").setup()
-
         local nvim_lsp = require("lspconfig")
-        local mason_lspconfig = require("mason-lspconfig")
         local capabilities = require("cmp_nvim_lsp").default_capabilities(
             vim.lsp.protocol.make_client_capabilities()
         )
 
-        mason_lspconfig.setup({
-            ensure_installed = {
-                "dockerls",
-                "eslint",
-                "jdtls",
-                "lua_ls",
-                "prettier",
-                "rust_analyzer",
-                "stylua",
-                "ts_ls",
-            }
-        })
+        local opts = {}
+        opts.capabilities = capabilities
 
+        -- LSPのhighlight機能を無効化する
+        -- treesitterを使うため必要ない
+        opts.on_attach = function(client, _)
+            client.server_capabilities.semanticTokensProvider = nil
+        end
+
+        --[[
         mason_lspconfig.setup_handlers({
             function(server_name)
                 local opts = {}
@@ -109,14 +98,15 @@ return {
                 nvim_lsp[server_name].setup(opts)
             end,
         })
+        ]]
 
         --nvim_lsp.sourcekit.setup({ capabilities = capabilities })
-        --nvim_lsp.rust_analyzer.setup{capabilities = capabilities}
-        --nvim_lsp.gopls.setup{capabilities = capabilities}
-        --nvim_lsp.clangd.setup{capabilities = capabilities}
-        --nvim_lsp.html.setup{capabilities = capabilities}
-        --nvim_lsp.cssls.setup{capabilities = capabilities}
-        --nvim_lsp.tsserver.setup{capabilities = capabilities}
-        --nvim_lsp.jsonls.setup{capabilities = capabilities}
+        nvim_lsp.rust_analyzer.setup(opts)
+        --nvim_lsp.gopls.setup({capabilities = capabilities})
+        --nvim_lsp.clangd.setup({capabilities = capabilities})
+        --nvim_lsp.html.setup({capabilities = capabilities})
+        --nvim_lsp.cssls.setup({capabilities = capabilities})
+        --nvim_lsp.tsserver.setup({capabilities = capabilities})
+        --nvim_lsp.jsonls.setup({capabilities = capabilities})
     end,
 }
