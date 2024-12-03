@@ -79,7 +79,6 @@ return {
         ]]
 
 		--nvim_lsp.sourcekit.setup({ capabilities = capabilities })
-		nvim_lsp.rust_analyzer.setup(opts)
 		nvim_lsp.lua_ls.setup({
 			capabilities = opts.capabilities,
 			on_attach = opts.on_attach,
@@ -91,11 +90,12 @@ return {
 				},
 			},
 		})
+		nvim_lsp.rust_analyzer.setup(opts)
+		nvim_lsp.ts_ls.setup({capabilities = capabilities})
 		--nvim_lsp.gopls.setup({capabilities = capabilities})
 		--nvim_lsp.clangd.setup({capabilities = capabilities})
 		--nvim_lsp.html.setup({capabilities = capabilities})
 		--nvim_lsp.cssls.setup({capabilities = capabilities})
-		--nvim_lsp.tsserver.setup({capabilities = capabilities})
 		--nvim_lsp.jsonls.setup({capabilities = capabilities})
 	end,
 }
