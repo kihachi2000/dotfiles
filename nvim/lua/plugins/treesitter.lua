@@ -3,7 +3,7 @@ return {
     build = ":TSUpdate",
     config = function()
         require("nvim-treesitter.configs").setup({
-            ensured_installed = {
+            ensure_installed = {
                 "bash",
                 "css",
                 "html",
