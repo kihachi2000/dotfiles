@@ -1,56 +1,34 @@
 return {
-    "neovim/nvim-lspconfig",
-    config = function()
-        -- キーコンフィグ
-        vim.keymap.set(
-            "n",
-            "<Leader>i",
-            vim.lsp.buf.hover,
-            { noremap = true, silent = true }
-        )
-        vim.keymap.set(
-            "n",
-            "<Leader>d",
-            vim.lsp.buf.definition,
-            { noremap = true, silent = true }
-        )
-        vim.keymap.set(
-            "n",
-            "<Leader>D",
-            vim.lsp.buf.declaration,
-            { noremap = true, silent = true }
-        )
-        vim.keymap.set(
-            "n",
-            "<Leader>m",
-            vim.lsp.buf.format,
-            { noremap = true, silent = true }
-        )
-        --vim.api.nvim_set_keymap("n", "<Leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>", {noremap = true, silent = true})
-        --vim.api.nvim_set_keymap("n", "<Leader>e", "<cmd>lua vim.lsp.buf.diagnostic.show_line_diagnostics()<CR>", {noremap = true, silent = true})
+	"neovim/nvim-lspconfig",
+	config = function()
+		-- キーコンフィグ
+		vim.keymap.set("n", "<Leader>i", vim.lsp.buf.hover, { noremap = true, silent = true })
+		vim.keymap.set("n", "<Leader>d", vim.lsp.buf.definition, { noremap = true, silent = true })
+		vim.keymap.set("n", "<Leader>D", vim.lsp.buf.declaration, { noremap = true, silent = true })
+		vim.keymap.set("n", "<Leader>m", vim.lsp.buf.format, { noremap = true, silent = true })
+		--vim.api.nvim_set_keymap("n", "<Leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>", {noremap = true, silent = true})
+		--vim.api.nvim_set_keymap("n", "<Leader>e", "<cmd>lua vim.lsp.buf.diagnostic.show_line_diagnostics()<CR>", {noremap = true, silent = true})
 
-        -- カラースキーム上書き
-        --sign define DiagnosticSignError text= texthl= linehl=DiagnosticLineError numhl=DiagnosticLineNrError
-        --sign define DiagnosticSignWarn text= texthl= linehl=DiagnosticLineWarn numhl=DiagnosticLineNrWarn
-        --sign define DiagnosticSignHint text= texthl= linehl=DiagnosticLineHint numhl=DiagnosticLineNrHint
-        --sign define DiagnosticSignInfo text= texthl= linehl=DiagnosticLineInfo numhl=DiagnosticLineNrInfo
+		-- カラースキーム上書き
+		--sign define DiagnosticSignError text= texthl= linehl=DiagnosticLineError numhl=DiagnosticLineNrError
+		--sign define DiagnosticSignWarn text= texthl= linehl=DiagnosticLineWarn numhl=DiagnosticLineNrWarn
+		--sign define DiagnosticSignHint text= texthl= linehl=DiagnosticLineHint numhl=DiagnosticLineNrHint
+		--sign define DiagnosticSignInfo text= texthl= linehl=DiagnosticLineInfo numhl=DiagnosticLineNrInfo
 
-        -- lsp本体の設定
-        local nvim_lsp = require("lspconfig")
-        local capabilities = require("cmp_nvim_lsp").default_capabilities(
-            vim.lsp.protocol.make_client_capabilities()
-        )
+		-- lsp本体の設定
+		local nvim_lsp = require("lspconfig")
+		local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-        local opts = {}
-        opts.capabilities = capabilities
+		local opts = {}
+		opts.capabilities = capabilities
 
-        -- LSPのhighlight機能を無効化する
-        -- treesitterを使うため必要ない
-        opts.on_attach = function(client, _)
-            client.server_capabilities.semanticTokensProvider = nil
-        end
+		-- LSPのhighlight機能を無効化する
+		-- treesitterを使うため必要ない
+		opts.on_attach = function(client, _)
+			client.server_capabilities.semanticTokensProvider = nil
+		end
 
-        --[[
+		--[[
         mason_lspconfig.setup_handlers({
             function(server_name)
                 local opts = {}
@@ -100,13 +78,24 @@ return {
         })
         ]]
 
-        --nvim_lsp.sourcekit.setup({ capabilities = capabilities })
-        nvim_lsp.rust_analyzer.setup(opts)
-        --nvim_lsp.gopls.setup({capabilities = capabilities})
-        --nvim_lsp.clangd.setup({capabilities = capabilities})
-        --nvim_lsp.html.setup({capabilities = capabilities})
-        --nvim_lsp.cssls.setup({capabilities = capabilities})
-        --nvim_lsp.tsserver.setup({capabilities = capabilities})
-        --nvim_lsp.jsonls.setup({capabilities = capabilities})
-    end,
+		--nvim_lsp.sourcekit.setup({ capabilities = capabilities })
+		nvim_lsp.rust_analyzer.setup(opts)
+		nvim_lsp.lua_ls.setup({
+			capabilities = opts.capabilities,
+			on_attach = opts.on_attach,
+			setting = {
+				Lua = {
+					diagnostics = {
+						globals = { "vim" },
+					},
+				},
+			},
+		})
+		--nvim_lsp.gopls.setup({capabilities = capabilities})
+		--nvim_lsp.clangd.setup({capabilities = capabilities})
+		--nvim_lsp.html.setup({capabilities = capabilities})
+		--nvim_lsp.cssls.setup({capabilities = capabilities})
+		--nvim_lsp.tsserver.setup({capabilities = capabilities})
+		--nvim_lsp.jsonls.setup({capabilities = capabilities})
+	end,
 }
