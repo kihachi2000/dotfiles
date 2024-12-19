@@ -5,8 +5,12 @@ return {
         require("nvim-treesitter.configs").setup({
             ensure_installed = {
                 "bash",
+                "c",
+                "cpp",
                 "css",
+                "dockerfile",
                 "html",
+                "ini",
                 "java",
                 "json",
                 "lua",
