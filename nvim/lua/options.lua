@@ -11,6 +11,15 @@ opt.swapfile = false
 
 -- クリップボード
 opt.clipboard = "unnamedplus"
+
+-- 参考: https://zenn.dev/goropikari/articles/506e08e7ad52af
+local function paste()
+    return {
+        vim.fn.split(vim.fn.getreg(""), "\n"),
+        vim.fn.getregtype(""),
+    }
+end
+
 vim.g.clipboard = {
     name = "OSC 52",
     copy = {
@@ -18,8 +27,8 @@ vim.g.clipboard = {
         ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
     },
     paste = {
-        ["+"] = require("vim.ui.clipboard.osc52").paste("+"),
-        ["*"] = require("vim.ui.clipboard.osc52").paste("*"),
+        ["+"] = paste,
+        ["*"] = paste,
     },
 }
 
