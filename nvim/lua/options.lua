@@ -12,26 +12,6 @@ opt.swapfile = false
 -- クリップボード
 opt.clipboard = "unnamedplus"
 
--- 参考: https://zenn.dev/goropikari/articles/506e08e7ad52af
-local function paste()
-    return {
-        vim.fn.split(vim.fn.getreg(""), "\n"),
-        vim.fn.getregtype(""),
-    }
-end
-
-vim.g.clipboard = {
-    name = "OSC 52",
-    copy = {
-        ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
-        ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
-    },
-    paste = {
-        ["+"] = paste,
-        ["*"] = paste,
-    },
-}
-
 -- タブを半角スペース4つにする
 opt.expandtab = true
 opt.tabstop = 4
