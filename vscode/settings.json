@@ -1,0 +1,112 @@
+{
+    // general
+    "workbench.colorTheme": "GitHub Dark",
+    "workbench.startupEditor": "terminal",
+    "workbench.editor.openPositioning": "first",
+    "breadcrumbs.enabled": false,
+    "extensions.autoUpdate": true,
+
+    // display
+    "window.zoomLevel": 0,
+    "window.newWindowDimensions": "maximized",
+    "workbench.tips.enabled": false,
+    "workbench.editor.showTabs": "single",
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+
+    // editor
+    "editor.autoClosingBrackets": "languageDefined",
+    "editor.autoClosingQuotes": "languageDefined",
+    "editor.autoIndent": "full",
+    "editor.autoSurround": "languageDefined",
+    "editor.cursorBlinking": "smooth",
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": true,
+    "editor.minimap.enabled": false,
+    "editor.renderControlCharacters": true,
+    "editor.renderWhitespace": "boundary",
+    "editor.tabSize": 4,
+    //"editor.wordWrap": "bounded",
+    "editor.quickSuggestions": {
+        "other": "on",
+        "comments": "off",
+        "strings": "on"
+    },
+    "editor.quickSuggestionsDelay": 200,
+
+    // search
+    "search.mode": "reuseEditor",
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/__pycache__": true,
+    },
+
+    // terminal
+    // "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "terminal.integrated.defaultProfile.windows": "Ubuntu-24.04 (WSL)",
+
+    // encoding
+    "files.autoGuessEncoding": true,
+    "files.autoSave": "off",
+    "files.eol": "auto",
+
+    // --------------------------------------------------
+    // VIM
+    // --------------------------------------------------
+    "vim.leader": ";",
+    "vim.autoindent": true,
+    "vim.useSystemClipboadrd": true,
+    "vim.hlsearch": true,
+
+    "vim.easymotion": true,
+    "vim.surround":true,
+    "vim.replaceWithRegister":true,
+
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {"before":["<"], "commands": ["editor.action.outdentLines"]},
+        {"before":[">"], "commands": ["editor.action.indentLines"]},
+        {"before":["<C-f>"], "commands": ["search.action.openEditor"]},
+        {"before":["<Leader>", "D"], "commands": ["editor.action.goToImplementation"]},
+        {"before":["<Leader>", "b", "n"], "commands": ["workbench.action.nextEditor"]},
+        {"before":["<Leader>", "b", "p"], "commands": ["workbench.action.previousEditor"]},
+        {"before":["<Leader>", "c"], "commands": ["editor.action.commentLine"]},
+        {"before":["<Leader>", "d"], "commands": ["editor.action.goToDeclaration"]},
+        {"before":["<Leader>", "g"], "commands": ["workbench.action.findInFiles"]},
+        {"before":["<Leader>", "i"], "commands": ["editor.action.showHover"]},
+        {"before":["<Leader>", "h"], "after": ["<C-w>", "h"]},
+        {"before":["<Leader>", "j"], "after": ["<C-w>", "j"]},
+        {"before":["<Leader>", "k"], "after": ["<C-w>", "k"]},
+        {"before":["<Leader>", "l"], "after": ["<C-w>", "l"]},
+        {"before":["<Leader>", "x"], "commands": ["workbench.action.closeEditorsInGroup"]},
+        {"before":["<Tab>"], "commands": ["workbench.files.action.focusFilesExplorer"]},
+        {"before":["?"], "commands": [":nohl"]},
+        {"before":["H"], "after": ["^"]},
+        {"before":["J"], "after": ["1", "0", "j"]},
+        {"before":["K"], "after": ["1", "0", "k"]},
+        {"before":["L"], "after": ["$"]},
+        {"before":["w"], "after": ["<Leader>", "<Leader>", "<Leader>", "b", "d", "w"]},
+        {"before":["j"], "after": ["g", "j"]},
+        {"before":["k"], "after": ["g", "k"]},
+    ],
+
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {"before":["<C-f>"], "commands": ["search.action.openEditor"]},
+        {"before":["<Leader>", "d"], "commands": ["editor.action.goToDeclaration"]},
+        {"before":["<Leader>", "D"], "commands": ["editor.action.goToImplementation"]},
+        {"before":["H"], "after": ["^"]},
+        {"before":["J"], "after": ["1", "0", "j"]},
+        {"before":["K"], "after": ["1", "0", "k"]},
+        {"before":["L"], "after": ["$"]},
+        {"before":["w"], "after": ["<Leader>", "<Leader>", "<Leader>", "b", "d", "w"]},
+        {"before":["j"], "after": ["g", "j"]},
+        {"before":["k"], "after": ["g", "k"]},
+    ],
+
+    "vim.handleKeys": {
+        "<C-a>": true,
+        "<C-x>": true,
+        "<C-r>": true,
+        "<C-j>": false,
+        "<C-f>": true,
+    }
+}

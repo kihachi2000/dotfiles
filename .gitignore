@@ -11,6 +11,7 @@
 !/install.sh
 !/nvim/**
 !/starship.toml
+!/vscode/**
 
 /nvim/lazy-lock.json
 

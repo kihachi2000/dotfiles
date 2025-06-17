@@ -1,0 +1,181 @@
+// Place your key bindings in this file to override the defaults
+[
+    // サジェスチョン操作
+    {
+        "key": "ctrl+n",
+        "command": "selectNextSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "selectPrevSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+
+    // コマンドパレットの移動
+    {
+        "key": "ctrl+n",
+        "command": "workbench.action.quickOpenSelectNext",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "workbench.action.quickOpenSelectPrevious",
+        "when": "inQuickOpen"
+    },
+
+    // エクスプローラー
+    {
+        "key": "j",
+        "command": "list.focusDown",
+        "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
+    },
+    {
+        "key": "k",
+        "command": "list.focusUp",
+        "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
+    },
+
+    // エクスプローラーでファイルを開く
+    {
+        "key": "l",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                {"command": "list.select"},
+                {"command": "workbench.action.toggleSidebarVisibility"},
+            ]
+        },
+        "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus && !explorerResourceIsFolder"
+    },
+    {
+        "key": "Enter",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                {"command": "explorer.openToSide"},
+                {"command": "workbench.action.toggleSidebarVisibility"},
+            ]
+        },
+        "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus && !explorerResourceIsFolder"
+    },
+
+    // エクスプローラーからエディタに戻る
+    {
+        "key": "Escape",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                {"command": "workbench.action.focusActiveEditorGroup"},
+                {"command": "workbench.action.toggleSidebarVisibility"},
+            ]
+        },
+        "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
+    },
+    {
+        "key": "Tab",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                {"command": "workbench.action.focusActiveEditorGroup"},
+                {"command": "workbench.action.toggleSidebarVisibility"},
+            ]
+        },
+        "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
+    },
+
+    // エクスプローラーで新規ファイル作成
+    {
+        "key": "c",
+        "command": "explorer.newFile",
+        "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
+    },
+
+    // エクスプローラーでリネーム
+    {
+        "key": "r",
+        "command": "renameFile",
+        "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
+    },
+
+    // エクスプローラーで削除
+    {
+        "key": "d",
+        "command": "deleteFile",
+        "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
+    },
+
+    // ターミナルを最大化して表示
+    {
+        "key": "ctrl+j",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                {"command": "workbench.action.toggleMaximizedPanel"},
+                {"command": "workbench.action.terminal.moveToTerminalPanel"},
+            ]
+        },
+        "when": "!panelFocus && !panelMaximized"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                {"command": "workbench.action.focusPanel"},
+                {"command": "workbench.action.terminal.moveToTerminalPanel"},
+            ]
+        },
+        "when": "!panelFocus && panelMaximized"
+    },
+
+    // パネルを閉じる
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.togglePanel",
+        "when": "panelFocus"
+    },
+
+    // サーチエディタの検索結果に移動する
+    {
+        "key": "Enter",
+        "command": "search.action.focusNextSearchResult",
+        "when": "inSearchEditor && searchInputBoxFocus",
+    },
+
+    // サーチエディタでの検索結果間のジャンプ
+    {
+        "key": "n",
+        "command": "search.action.focusNextSearchResult",
+        "when": "inSearchEditor && !searchInputBoxFocus",
+    },
+    {
+        "key": "shift+n",
+        "command": "search.action.focusPreviousSearchResult",
+        "when": "inSearchEditor && !searchInputBoxFocus",
+    },
+
+    // サーチエディタの検索窓に戻る
+    {
+        "key": "Escape",
+        "command": "search.action.focusQueryEditorWidget",
+        "when": "inSearchEditor && !searchInputBoxFocus && vim.active && vim.mode == 'Normal' || vim.mode == 'Visual'",
+    },
+
+    // サーチエディタを閉じる
+    {
+        "key": "Escape",
+        "command": "workbench.action.closeActiveEditor",
+        "when": "inSearchEditor && searchInputBoxFocus",
+    },
+
+    // .mdファイルで箇条書きにカーソルがあっているときの挙動を修正する
+    {
+        "key": "Tab",
+        "command": "-markdown.extension.onTabKey",
+    },
+    {
+        "key": "shift+Tab",
+        "command": "-markdown.extension.onShiftTabKey",
+    },
+]
