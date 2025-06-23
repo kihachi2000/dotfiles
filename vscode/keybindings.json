@@ -159,7 +159,7 @@
     {
         "key": "Escape",
         "command": "search.action.focusQueryEditorWidget",
-        "when": "inSearchEditor && !searchInputBoxFocus && vim.active && vim.mode == 'Normal' || vim.mode == 'Visual'",
+        "when": "inSearchEditor && !searchInputBoxFocus && vim.active && (vim.mode == 'Normal' || vim.mode == 'Visual')",
     },
 
     // サーチエディタを閉じる
