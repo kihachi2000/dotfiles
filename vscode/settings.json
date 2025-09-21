@@ -33,6 +33,7 @@
         "strings": "on"
     },
     "editor.quickSuggestionsDelay": 200,
+    "editor.editorContext": false,
 
     // search
     "search.mode": "reuseEditor",
