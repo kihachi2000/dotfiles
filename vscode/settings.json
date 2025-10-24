@@ -1,7 +1,7 @@
 {
     // general
     // "workbench.colorTheme": "GitHub Dark",
-    // "workbench.colorTheme": "GitHub Dark Dimmed",
+    "workbench.colorTheme": "GitHub Dark Dimmed",
     "workbench.startupEditor": "terminal",
     "workbench.editor.openPositioning": "first",
     "breadcrumbs.enabled": false,
@@ -57,7 +57,7 @@
     // --------------------------------------------------
     "vim.leader": ";",
     "vim.autoindent": true,
-    "vim.useSystemClipboadrd": true,
+    "vim.useSystemClipboard": true,
     "vim.hlsearch": true,
 
     "vim.easymotion": true,
