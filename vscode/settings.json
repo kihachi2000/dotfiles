@@ -1,6 +1,7 @@
 {
     // general
-    "workbench.colorTheme": "GitHub Dark",
+    // "workbench.colorTheme": "GitHub Dark",
+    // "workbench.colorTheme": "GitHub Dark Dimmed",
     "workbench.startupEditor": "terminal",
     "workbench.editor.openPositioning": "first",
     "breadcrumbs.enabled": false,
@@ -44,7 +45,7 @@
 
     // terminal
     // "terminal.integrated.defaultProfile.windows": "Git Bash",
-    "terminal.integrated.defaultProfile.windows": "Ubuntu-24.04 (WSL)",
+    // "terminal.integrated.defaultProfile.windows": "Ubuntu-24.04 (WSL)",
 
     // encoding
     "files.autoGuessEncoding": true,
@@ -88,6 +89,8 @@
         {"before":["w"], "after": ["<Leader>", "<Leader>", "<Leader>", "b", "d", "w"]},
         {"before":["j"], "after": ["g", "j"]},
         {"before":["k"], "after": ["g", "k"]},
+        {"before":["m"], "commands": ["editor.action.setSelectionAnchor"]},
+        {"before":["M"], "commands": ["editor.action.goToSelectionAnchor", "editor.action.cancelSelectionAnchor"]},
     ],
 
     "vim.visualModeKeyBindingsNonRecursive": [
