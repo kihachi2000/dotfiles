@@ -1,7 +1,5 @@
 {
     // general
-    // "workbench.colorTheme": "GitHub Dark",
-    "workbench.colorTheme": "GitHub Dark Dimmed",
     "workbench.startupEditor": "terminal",
     "workbench.editor.openPositioning": "first",
     "breadcrumbs.enabled": false,
@@ -43,18 +41,12 @@
         "**/__pycache__": true,
     },
 
-    // terminal
-    // "terminal.integrated.defaultProfile.windows": "Git Bash",
-    // "terminal.integrated.defaultProfile.windows": "Ubuntu-24.04 (WSL)",
-
     // encoding
     "files.autoGuessEncoding": true,
     "files.autoSave": "off",
     "files.eol": "auto",
 
-    // --------------------------------------------------
     // VIM
-    // --------------------------------------------------
     "vim.leader": ";",
     "vim.autoindent": true,
     "vim.useSystemClipboard": true,
@@ -112,5 +104,14 @@
         "<C-r>": true,
         "<C-j>": false,
         "<C-f>": true,
-    }
+    },
+
+    // environment-specific settings
+    // "workbench.colorTheme": "GitHub Dark",
+    // "workbench.colorTheme": "GitHub Dark Dimmed",
+
+    // "terminal.integrated.defaultProfile.windows": "Git Bash",
+    // "terminal.integrated.defaultProfile.windows": "Ubuntu-24.04 (WSL)",
+
+    // "remote.SSH.remotePlatform": { "pop": "linux" },
 }
