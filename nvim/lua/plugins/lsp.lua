@@ -16,7 +16,7 @@ return {
 		--sign define DiagnosticSignInfo text= texthl= linehl=DiagnosticLineInfo numhl=DiagnosticLineNrInfo
 
 		-- lsp本体の設定
-		local nvim_lsp = require("lspconfig")
+		local nvim_lsp = vim.lspconfig
 		local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 		local opts = {}
