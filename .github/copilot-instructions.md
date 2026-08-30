@@ -10,7 +10,8 @@
 
 ## CI 確認項目
 
-未定。
+- neovim
+  - `nvim/` 以下の設定ファイルに構文エラーがないこと。
 
 ## コミットメッセージのルール（Conventional Commits 準拠）
 
