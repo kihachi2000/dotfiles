@@ -1,5 +1,6 @@
 return {
 	"neovim/nvim-lspconfig",
+ cond = false,
 	config = function()
 		-- キーコンフィグ
 		vim.keymap.set("n", "<Leader>i", vim.lsp.buf.hover, { noremap = true, silent = true })
