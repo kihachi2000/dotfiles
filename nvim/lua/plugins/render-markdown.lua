@@ -51,7 +51,7 @@ return {
         quote = {
             enabled = true,
             icon = "▎",
-            repeat = true,
+            repeat_linebreak = true,
         },
         pipe_table = {
             enabled = true,
